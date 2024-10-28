@@ -1,51 +1,126 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EaglerClients</title>
     <style>
+        /* Estilos generales */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000; /* Fondo negro */
+            font-family: 'Arial', sans-serif;
+            background-color: #282c34; /* Fondo oscuro */
             margin: 0;
             padding: 20px;
-            text-align: center;
-            color: #fff; /* Color del texto blanco */
+            color: #ffffff; /* Color del texto blanco */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative; /* Posicionamiento relativo para el texto de crĆ©dito */
         }
+
+        /* Estilo del texto girado en la esquina inferior derecha */
+        .credit {
+            font-size: 1.5rem; /* TamaĆ±o del texto de crĆ©dito */
+            color: #ffffff; /* Cambiado a blanco */
+            position: absolute; /* Posicionamiento absoluto */
+            bottom: 375px; /* Ajuste la distancia desde la parte inferior */
+            right: 550px; /* Ajuste la distancia desde el lado derecho */
+            z-index: 1; /* Asegura que estĆ© por encima del tĆ­tulo */
+            transform: rotate(-50deg); /* Rotar el texto */
+            animation: pulse 1.5s infinite; /* AnimaciĆ³n de pulso en loop */
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1) rotate(-10deg); /* TamaĆ±o original */
+            }
+            50% {
+                transform: scale(1.1) rotate(-10deg); /* Aumenta el tamaĆ±o a 110% */
+            }
+        }
+
         h1 {
-            font-size: 3rem;
-            color: #fff; /* Título blanco */
+            font-size: 3.5rem; /* TamaĆ±o inicial del tĆ­tulo */
+            color: #ffba08; /* Color amarillo */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
+
         p {
-            color: #ccc; /* Texto del párrafo gris claro */
+            color: #a9a9a9; /* Texto del pĆ�rrafo gris */
+            margin-bottom: 30px;
+            font-size: 1.2rem;
         }
+
+        /* Contenedor de botones en dos columnas */
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* Espaciado entre columnas */
+            width: 100%;
+            max-width: 800px; /* Ancho mĆ�ximo */
+            gap: 30px; /* Espacio entre columnas */
+        }
+
+        /* Estilo de cada columna */
+        .column {
+            background-color: #444; /* Fondo de columnas */
+            border-radius: 10px;
+            padding: 20px;
+            width: 45%; /* Ancho de cada columna */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* TĆ­tulos de las columnas */
+        .column-title {
+            font-size: 1.8rem;
+            color: #ffba08; /* Color amarillo */
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Estilo de los enlaces (botones) */
         a {
             display: block;
-            margin: 20px 0;
-            padding: 10px 20px;
+            padding: 15px 0; /* Espaciado vertical en el botĆ³n */
             text-decoration: none;
-            color: white;
-            background-color: #007bff;
-            border-radius: 5px;
-            width: 200px;
-            margin-left: auto;
-            margin-right: auto;
+            color: #282c34; /* Color de texto de los botones */
+            background-color: #ffba08; /* Botones color amarillo */
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 10px 0; /* Margen entre botones */
         }
+
         a:hover {
-            background-color: #0056b3;
+            background-color: #e89b00; /* Color de fondo al pasar el ratĆ³n */
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
     <h1>EaglerClients</h1>
+    <!-- Texto de crĆ©dito rotado en la esquina inferior derecha -->
+    <div class="credit">by Cristianboy9</div>
     <p>Select a client to use:</p>
 
-    <a href="UwU-client-b2-offline.html">UwU Client b2</a>
-    <a href="PremiumDragonv2.html">Dragon Client</a>
-    <a href="Resent-Signed.html">Resent Signed</a>
-    <a href="PiClient-v1.html">Pi Client</a>
-    <a href="Shadow-Client.html">Shadow Client</a>
+    <!-- Contenedor de botones en dos columnas -->
+    <div class="button-container">
+        <!-- Columna Izquierda para Legit Clients -->
+        <div class="column">
+            <div class="column-title">Legit Clients</div>
+            <a href="Resent-Signed.html">Resent Signed</a>
+            <a href="Shadow-Client.html">Shadow Client</a>
+        </div>
+
+        <!-- Columna Derecha para Hacked Clients -->
+        <div class="column">
+            <div class="column-title">Hacked Clients</div>
+            <a href="UwU-client-b2-offline.html">UwU Client</a>
+            <a href="PremiumDragonv2.html">Premium Dragon v2</a>
+            <a href="PiClient-v1.html">Pi Client v1</a>
+        </div>
+    </div>
 
 </body>
 </html>
