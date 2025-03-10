@@ -3,59 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eagler Clients</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="launcher-container">
-        <div class="launcher-header">
+        <!-- Encabezado -->
+        <header class="launcher-header">
             <h1>Eagler Clients</h1>
-            <p>¡Elige la versión del cliente que deseas jugar!</p>
+            <p>Selecciona la versión que deseas ejecutar.</p>
+        </header>
+        
+        <!-- Botones para elegir versiones -->
+        <div class="buttons-container">
+            <button class="version-button">Cristianboy9</button>
+            <button class="version-button">PremiumDragonv2</button>
+            <button class="version-button">Resent-Signed</button>
+            <button class="version-button">Shadow-Client</button>
+            <button class="version-button">UwU-client-b2-offline</button>
         </div>
 
-        <div class="launcher-body">
-            <div class="buttons-container">
-                <button class="version-button" onclick="openClient('PiClient-v1.html')">PiClient v1</button>
-                <button class="version-button" onclick="openClient('PremiumDragonv2.html')">PremiumDragon v2</button>
-                <button class="version-button" onclick="openClient('Shadow-Client.html')">Shadow Client</button>
-                <button class="version-button" onclick="openClient('UwU-client-b2-offline.html')">UwU Client b2</button>
+        <!-- Noticias -->
+        <section class="news-section">
+            <h2>Últimas noticias</h2>
+            <div class="news-item">
+                <h3>Actualización de Eagler Client</h3>
+                <p>La nueva versión mejora la estabilidad y rendimiento. ¡Descúbrela ahora!</p>
             </div>
-
-            <!-- Sección de Noticias -->
-            <div class="news-section">
-                <h2>Noticias y Actualizaciones</h2>
-                <div id="news-list">
-                    <div class="news-item">
-                        <h3>Versión 1.0 lanzada</h3>
-                        <p>Corrección de errores y mejoras generales.</p>
-                    </div>
-                    <div class="news-item">
-                        <h3>Versión 1.1 disponible</h3>
-                        <p>Añadida nueva interfaz de usuario.</p>
-                    </div>
-                    <div class="news-item">
-                        <h3>Versión 1.2</h3>
-                        <p>Mejoras en el rendimiento y optimización.</p>
-                    </div>
-                </div>
+            <div class="news-item">
+                <h3>Nuevo cliente PremiumDragonv2</h3>
+                <p>El cliente PremiumDragonv2 tiene nuevas funcionalidades para una experiencia única.</p>
             </div>
+        </section>
 
-            <!-- Sección de sugerencias -->
-            <div class="suggestions-section">
-                <h2>¡Haz una sugerencia!</h2>
-                <form id="suggestion-form">
-                    <textarea id="suggestion-input" placeholder="Escribe tu sugerencia aquí..." required></textarea>
-                    <button type="submit" class="suggestion-button">Enviar Sugerencia</button>
-                </form>
-            </div>
-        </div>
+        <!-- Sugerencias -->
+        <section class="suggestions-section">
+            <h2>Envía una sugerencia</h2>
+            <textarea id="suggestion-input" placeholder="Escribe tu sugerencia aquí..."></textarea>
+            <button class="suggestion-button">Enviar sugerencia</button>
+        </section>
 
-        <div class="launcher-footer">
-            <p>&copy; 2025 Eagler Clients. Todos los derechos reservados.</p>
-        </div>
+        <!-- Pie de página -->
+        <footer class="launcher-footer">
+            <p>&copy; 2025 Eagler Clients - Todos los derechos reservados.</p>
+        </footer>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
