@@ -1,40 +1,66 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #2c2f33;
+    background-color: #1e1e1e;
     color: white;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .launcher {
-    width: 50%;
-    margin: auto;
+    width: 800px;
+    margin: 50px auto;
     padding: 20px;
-    background-color: #23272a;
+    background-color: #2b2b2b;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 header {
     font-size: 24px;
-    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #3a3a3a;
+    border-radius: 10px 10px 0 0;
 }
 
-nav button {
-    margin: 5px;
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #252525;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar button {
     padding: 10px;
-    background-color: #7289da;
+    background-color: #4CAF50;
     border: none;
     color: white;
     cursor: pointer;
     border-radius: 5px;
 }
 
-nav button:hover {
-    background-color: #5b6eae;
+.sidebar button:hover {
+    background-color: #45a049;
 }
 
-main {
-    margin-top: 20px;
+.content {
+    width: 75%;
+    padding: 20px;
+    background-color: #333;
+}
+
+#jugar, #noticias, #skins {
+    display: none;
+}
+
+#jugar {
+    display: block;
 }
 
 select, button {
@@ -42,10 +68,6 @@ select, button {
     padding: 10px;
     border-radius: 5px;
     border: none;
-}
-
-#noticias, #skins {
-    display: none;
 }
 
 #barra-carga {
