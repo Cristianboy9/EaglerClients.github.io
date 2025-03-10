@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Launcher de Juego</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,20 +15,30 @@
         </div>
 
         <div class="launcher-body">
-            <!-- Botones para seleccionar cliente -->
-            <button class="version-button" onclick="openClient('PiClient-v1.html')">PiClient v1</button>
-            <button class="version-button" onclick="openClient('PremiumDragonv2.html')">PremiumDragon v2</button>
-            <button class="version-button" onclick="openClient('Shadow-Client.html')">Shadow Client</button>
-            <button class="version-button" onclick="openClient('UwU-client-b2-offline.html')">UwU Client b2</button>
+            <div class="buttons-container">
+                <button class="version-button" onclick="openClient('PiClient-v1.html')">PiClient v1</button>
+                <button class="version-button" onclick="openClient('PremiumDragonv2.html')">PremiumDragon v2</button>
+                <button class="version-button" onclick="openClient('Shadow-Client.html')">Shadow Client</button>
+                <button class="version-button" onclick="openClient('UwU-client-b2-offline.html')">UwU Client b2</button>
+            </div>
 
             <!-- Sección de Noticias -->
             <div class="news-section">
                 <h2>Noticias y Actualizaciones</h2>
-                <ul id="news-list">
-                    <li>Versión 1.0 lanzada - ¡Corrección de errores y mejoras generales!</li>
-                    <li>Versión 1.1 disponible - Añadida nueva interfaz de usuario.</li>
-                    <li>Versión 1.2 - Mejoras en el rendimiento y optimización.</li>
-                </ul>
+                <div id="news-list">
+                    <div class="news-item">
+                        <h3>Versión 1.0 lanzada</h3>
+                        <p>Corrección de errores y mejoras generales.</p>
+                    </div>
+                    <div class="news-item">
+                        <h3>Versión 1.1 disponible</h3>
+                        <p>Añadida nueva interfaz de usuario.</p>
+                    </div>
+                    <div class="news-item">
+                        <h3>Versión 1.2</h3>
+                        <p>Mejoras en el rendimiento y optimización.</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Sección de sugerencias -->
