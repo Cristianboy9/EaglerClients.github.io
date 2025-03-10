@@ -6,16 +6,21 @@
 }
 
 /* Estilo general */
+html, body {
+    height: 100%;
+    overflow: auto;  /* Habilitar el scroll en toda la página si es necesario */
+}
+
+/* Fondo y alineación del body */
 body {
     background: linear-gradient(135deg, #1a1a1a, #333);
     font-family: 'Poppins', sans-serif;
     color: #fff;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden; /* Evitar overflow */
+    align-items: flex-start;  /* Cambié para permitir contenido en la parte superior */
+    height: 100%;
+    width: 100%;
 }
 
 /* Contenedor principal */
@@ -25,10 +30,12 @@ body {
     border-radius: 15px;
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
     width: 90%;
-    height: 90%;
+    max-width: 1200px;  /* Limitar el ancho máximo para pantallas grandes */
+    margin-top: 40px;  /* Agregar margen superior */
+    overflow: auto;  /* Habilitar el scroll dentro del contenedor si el contenido es grande */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;  /* Aseguramos que los elementos estén al principio */
     align-items: center;
 }
 
