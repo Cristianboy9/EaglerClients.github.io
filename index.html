@@ -11,36 +11,37 @@
         <header>
             <h1>Launcher de Minecraft</h1>
         </header>
-        <nav>
-            <button onclick="mostrarSeccion('jugar')">Jugar</button>
-            <button onclick="mostrarSeccion('noticias')">Noticias</button>
-            <button onclick="mostrarSeccion('skins')">Skins</button>
-        </nav>
-        <main>
-            <section id="jugar">
-                <h2>Selecciona una versión</h2>
-                <select id="versiones">
-                    <option value="eaglercraft-1.5.2.html">Eaglercraft 1.5.2</option>
-                    <option value="eaglercraft-1.8.8.html">Eaglercraft 1.8.8</option>
-                </select>
-                <button onclick="iniciarJuego()">Iniciar Juego</button>
-                <div id="barra-carga">
-                    <div id="progreso"></div>
-                </div>
-            </section>
-            <section id="noticias">
-                <h2>Noticias y Clientes</h2>
-                <div id="lista-noticias">
-                    <p>No hay noticias aún.</p>
-                </div>
-            </section>
-            <section id="skins">
-                <h2>Galería de Skins</h2>
-                <div id="galeria-skins">
-                    <p>No hay skins disponibles.</p>
-                </div>
-            </section>
-        </main>
+        <div class="container">
+            <aside class="sidebar">
+                <button onclick="mostrarSeccion('noticias')">Noticias</button>
+                <button onclick="mostrarSeccion('skins')">Skins</button>
+            </aside>
+            <main class="content">
+                <section id="jugar">
+                    <h2>Selecciona una versión</h2>
+                    <select id="versiones">
+                        <option value="eaglercraft-1.5.2.html">Eaglercraft 1.5.2</option>
+                        <option value="eaglercraft-1.8.8.html">Eaglercraft 1.8.8</option>
+                    </select>
+                    <button onclick="iniciarJuego()">Jugar</button>
+                    <div id="barra-carga">
+                        <div id="progreso"></div>
+                    </div>
+                </section>
+                <section id="noticias">
+                    <h2>Noticias y Clientes</h2>
+                    <div id="lista-noticias">
+                        <p>No hay noticias aún.</p>
+                    </div>
+                </section>
+                <section id="skins">
+                    <h2>Galería de Skins</h2>
+                    <div id="galeria-skins">
+                        <p>No hay skins disponibles.</p>
+                    </div>
+                </section>
+            </main>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
