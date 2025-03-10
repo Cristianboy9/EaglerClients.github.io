@@ -1,87 +1,28 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1e1e1e;
-    color: white;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+function mostrarSeccion(seccion) {
+    document.getElementById('jugar').style.display = 'none';
+    document.getElementById('noticias').style.display = 'none';
+    document.getElementById('skins').style.display = 'none';
+    document.getElementById(seccion).style.display = 'block';
 }
 
-.launcher {
-    width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #2b2b2b;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
+function iniciarJuego() {
+    let barra = document.getElementById('barra-carga');
+    let progreso = document.getElementById('progreso');
+    let seleccion = document.getElementById('versiones').value;
+    
+    barra.style.display = 'block';
+    progreso.style.width = '0%';
 
-header {
-    font-size: 24px;
-    padding: 10px;
-    background-color: #3a3a3a;
-    border-radius: 10px 10px 0 0;
-}
+    let carga = 0;
+    let intervalo = setInterval(() => {
+        carga += 10;
+        progreso.style.width = carga + '%';
 
-.container {
-    display: flex;
-}
-
-.sidebar {
-    width: 25%;
-    background-color: #252525;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.sidebar button {
-    padding: 10px;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.sidebar button:hover {
-    background-color: #45a049;
-}
-
-.content {
-    width: 75%;
-    padding: 20px;
-    background-color: #333;
-}
-
-#jugar, #noticias, #skins {
-    display: none;
-}
-
-#jugar {
-    display: block;
-}
-
-select, button {
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-}
-
-#barra-carga {
-    display: none;
-    width: 100%;
-    background-color: #555;
-    margin-top: 10px;
-    height: 20px;
-    border-radius: 5px;
-}
-
-#progreso {
-    width: 0%;
-    height: 100%;
-    background-color: #4CAF50;
-    border-radius: 5px;
+        if (carga >= 100) {
+            clearInterval(intervalo);
+            setTimeout(() => {
+                window.location.href = seleccion;
+            }, 500);
+        }
+    }, 300);
 }
