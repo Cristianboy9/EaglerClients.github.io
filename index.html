@@ -3,46 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Launcher de Minecraft Web</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Launcher de Juego</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="launcher">
-        <header>
-            <h1>Launcher de Minecraft</h1>
-        </header>
-        <div class="container">
-            <aside class="sidebar">
-                <button onclick="mostrarSeccion('noticias')">Noticias</button>
-                <button onclick="mostrarSeccion('skins')">Skins</button>
-            </aside>
-            <main class="content">
-                <section id="jugar">
-                    <h2>Selecciona una versión</h2>
-                    <select id="versiones">
-                        <option value="eaglercraft-1.5.2.html">Eaglercraft 1.5.2</option>
-                        <option value="eaglercraft-1.8.8.html">Eaglercraft 1.8.8</option>
-                    </select>
-                    <button onclick="iniciarJuego()">Jugar</button>
-                    <div id="barra-carga">
-                        <div id="progreso"></div>
-                    </div>
-                </section>
-                <section id="noticias">
-                    <h2>Noticias y Clientes</h2>
-                    <div id="lista-noticias">
-                        <p>No hay noticias aún.</p>
-                    </div>
-                </section>
-                <section id="skins">
-                    <h2>Galería de Skins</h2>
-                    <div id="galeria-skins">
-                        <p>No hay skins disponibles.</p>
-                    </div>
-                </section>
-            </main>
+    <div class="launcher-container">
+        <div class="launcher-header">
+            <h1>Mi Juego</h1>
+            <p>¡Selecciona la versión del cliente!</p>
+        </div>
+
+        <div class="launcher-body">
+            <!-- Botones para seleccionar cliente -->
+            <button class="version-button" onclick="openClient('PiClient-v1.html')">PiClient v1</button>
+            <button class="version-button" onclick="openClient('PremiumDragonv2.html')">PremiumDragon v2</button>
+            <button class="version-button" onclick="openClient('Shadow-Client.html')">Shadow Client</button>
+            <button class="version-button" onclick="openClient('UwU-client-b2-offline.html')">UwU Client b2</button>
+
+            <!-- Sección de Noticias -->
+            <div class="news-section">
+                <h2>Noticias y Actualizaciones</h2>
+                <ul id="news-list">
+                    <li>Versión 1.0 lanzada - ¡Corrección de errores y mejoras generales!</li>
+                    <li>Versión 1.1 disponible - Añadida nueva interfaz de usuario.</li>
+                    <li>Versión 1.2 - Mejoras en el rendimiento y optimización.</li>
+                </ul>
+            </div>
+
+            <!-- Sección de sugerencias -->
+            <div class="suggestions-section">
+                <h2>¡Haz una sugerencia!</h2>
+                <form id="suggestion-form">
+                    <textarea id="suggestion-input" placeholder="Escribe tu sugerencia aquí..." required></textarea>
+                    <button type="submit" class="suggestion-button">Enviar Sugerencia</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="launcher-footer">
+            <p>&copy; 2025 Mi Juego. Todos los derechos reservados.</p>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
