@@ -5,10 +5,10 @@
     box-sizing: border-box;
 }
 
-/* Estilo general */
+/* Aseguramos que el body pueda hacer scroll */
 html, body {
     height: 100%;
-    overflow: auto;  /* Habilitar el scroll en toda la página si es necesario */
+    overflow: auto; /* Habilitar el scroll en toda la página */
 }
 
 /* Fondo y alineación del body */
@@ -18,8 +18,8 @@ body {
     color: #fff;
     display: flex;
     justify-content: center;
-    align-items: flex-start;  /* Cambié para permitir contenido en la parte superior */
-    height: 100%;
+    align-items: flex-start;
+    height: auto; /* Permitir que el body se ajuste al contenido */
     width: 100%;
 }
 
@@ -30,13 +30,14 @@ body {
     border-radius: 15px;
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
     width: 90%;
-    max-width: 1200px;  /* Limitar el ancho máximo para pantallas grandes */
-    margin-top: 40px;  /* Agregar margen superior */
-    overflow: auto;  /* Habilitar el scroll dentro del contenedor si el contenido es grande */
+    max-width: 1200px;
+    margin-top: 40px;
+    overflow: auto; /* Permitir scroll dentro del contenedor si el contenido es mayor */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;  /* Aseguramos que los elementos estén al principio */
+    justify-content: flex-start;
     align-items: center;
+    min-height: 100%; /* Asegura que el contenedor ocupe todo el alto disponible */
 }
 
 /* Encabezado */
