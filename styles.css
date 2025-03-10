@@ -1,28 +1,123 @@
-function mostrarSeccion(seccion) {
-    document.getElementById('jugar').style.display = 'none';
-    document.getElementById('noticias').style.display = 'none';
-    document.getElementById('skins').style.display = 'none';
-    document.getElementById(seccion).style.display = 'block';
+/* Estilos generales del Launcher */
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
 }
 
-function iniciarJuego() {
-    let barra = document.getElementById('barra-carga');
-    let progreso = document.getElementById('progreso');
-    let seleccion = document.getElementById('versiones').value;
-    
-    barra.style.display = 'block';
-    progreso.style.width = '0%';
+.launcher-container {
+    background: #333;
+    padding: 30px;
+    border-radius: 10px;
+    width: 380px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
 
-    let carga = 0;
-    let intervalo = setInterval(() => {
-        carga += 10;
-        progreso.style.width = carga + '%';
+.launcher-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #ffd700;
+}
 
-        if (carga >= 100) {
-            clearInterval(intervalo);
-            setTimeout(() => {
-                window.location.href = seleccion;
-            }, 500);
-        }
-    }, 300);
+.launcher-header p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+/* Botones */
+.version-button {
+    padding: 15px 20px;
+    border: none;
+    background: #ffd700;
+    color: #111;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.version-button:hover {
+    background: #ffcc00;
+}
+
+/* Noticias */
+.news-section {
+    background: #444;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.news-section h2 {
+    font-size: 1.5rem;
+    color: #ffd700;
+}
+
+#news-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#news-list li {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Sección de sugerencias */
+.suggestions-section {
+    background: #444;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.suggestions-section h2 {
+    font-size: 1.5rem;
+    color: #ffd700;
+}
+
+#suggestion-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #555;
+    color: #fff;
+    height: 100px;
+    resize: none;
+}
+
+.suggestion-button {
+    padding: 12px 20px;
+    border: none;
+    background: #ffd700;
+    color: #111;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.suggestion-button:hover {
+    background: #ffcc00;
+}
+
+/* Pie de página */
+.launcher-footer p {
+    font-size: 0.8rem;
+    color: #bbb;
+    margin-top: 30px;
 }
