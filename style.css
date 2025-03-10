@@ -1,0 +1,152 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.launcher-container {
+    background: #222;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    width: 380px;
+    text-align: center;
+}
+
+.launcher-header h1 {
+    font-size: 2.8rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.launcher-header p {
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+/* Botones */
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.version-button {
+    padding: 12px;
+    border: none;
+    background-color: #ff5733;
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 100%;
+}
+
+.version-button:hover {
+    background-color: #ff471a;
+    transform: scale(1.05);
+}
+
+/* Sección de noticias */
+.news-section {
+    background-color: #444;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.news-section h2 {
+    font-size: 1.8rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.news-item {
+    background-color: #555;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.news-item:hover {
+    background-color: #666;
+}
+
+.news-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.news-item p {
+    font-size: 1rem;
+}
+
+/* Sección de sugerencias */
+.suggestions-section {
+    background-color: #444;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.suggestions-section h2 {
+    font-size: 1.8rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+#suggestion-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #555;
+    color: #fff;
+    resize: none;
+    min-height: 100px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+#suggestion-input:focus {
+    background-color: #666;
+    outline: none;
+}
+
+.suggestion-button {
+    padding: 12px;
+    border: none;
+    background-color: #ff5733;
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.suggestion-button:hover {
+    background-color: #ff471a;
+}
+
+/* Pie de página */
+.launcher-footer p {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-top: 30px;
+}
