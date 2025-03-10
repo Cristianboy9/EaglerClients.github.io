@@ -1,28 +1,45 @@
-function mostrarSeccion(seccion) {
-    document.getElementById('jugar').style.display = 'none';
-    document.getElementById('noticias').style.display = 'none';
-    document.getElementById('skins').style.display = 'none';
-    document.getElementById(seccion).style.display = 'block';
+// Función para abrir la versión seleccionada
+function openClient(clientFile) {
+    window.location.href = clientFile;
 }
 
-function iniciarJuego() {
-    let barra = document.getElementById('barra-carga');
-    let progreso = document.getElementById('progreso');
-    let seleccion = document.getElementById('versiones').value;
+// Manejar la sugerencia
+document.getElementById('suggestion-form').addEventListener('submit', function(event) {
+    event.preventDefault();
     
-    barra.style.display = 'block';
-    progreso.style.width = '0%';
+    const suggestion = document.getElementById('suggestion-input').value;
 
-    let carga = 0;
-    let intervalo = setInterval(() => {
-        carga += 10;
-        progreso.style.width = carga + '%';
+    // Validar que se haya escrito algo
+    if (suggestion.trim() === "") {
+        alert("Por favor, escribe una sugerencia.");
+        return;
+    }
 
-        if (carga >= 100) {
-            clearInterval(intervalo);
-            setTimeout(() => {
-                window.location.href = seleccion;
-            }, 500);
+    // Configura tu Webhook de Discord aquí
+    const webhookUrl = "TU_DISCORD_WEBHOOK_URL"; // Aquí va tu URL de webhook
+
+    const payload = {
+        content: `Nueva sugerencia recibida: ${suggestion}`,
+        username: "Sugerencias del Launcher"
+    };
+
+    fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("¡Gracias por tu sugerencia!");
+            document.getElementById('suggestion-input').value = ""; // Limpiar el campo
+        } else {
+            alert("Hubo un problema al enviar tu sugerencia. Intenta más tarde.");
         }
-    }, 300);
-}
+    })
+    .catch(error => {
+        alert("Hubo un error al intentar enviar la sugerencia.");
+        console.error(error);
+    });
+});
