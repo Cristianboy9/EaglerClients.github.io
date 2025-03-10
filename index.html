@@ -1,126 +1,247 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EaglerClients</title>
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #282c34; /* Fondo oscuro */
-            margin: 0;
-            padding: 20px;
-            color: #ffffff; /* Color del texto blanco */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative; /* Posicionamiento relativo para el texto de crĆ©dito */
-        }
-
-        /* Estilo del texto girado en la esquina inferior derecha */
-        .credit {
-            font-size: 1.5rem; /* TamaĆ±o del texto de crĆ©dito */
-            color: #ffffff; /* Cambiado a blanco */
-            position: absolute; /* Posicionamiento absoluto */
-            bottom: 375px; /* Ajuste la distancia desde la parte inferior */
-            right: 550px; /* Ajuste la distancia desde el lado derecho */
-            z-index: 1; /* Asegura que estĆ© por encima del tĆ­tulo */
-            transform: rotate(-50deg); /* Rotar el texto */
-            animation: pulse 1.5s infinite; /* AnimaciĆ³n de pulso en loop */
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1) rotate(-10deg); /* TamaĆ±o original */
-            }
-            50% {
-                transform: scale(1.1) rotate(-10deg); /* Aumenta el tamaĆ±o a 110% */
-            }
-        }
-
-        h1 {
-            font-size: 3.5rem; /* TamaĆ±o inicial del tĆ­tulo */
-            color: #ffba08; /* Color amarillo */
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
-
-        p {
-            color: #a9a9a9; /* Texto del pĆ�rrafo gris */
-            margin-bottom: 30px;
-            font-size: 1.2rem;
-        }
-
-        /* Contenedor de botones en dos columnas */
-        .button-container {
-            display: flex;
-            justify-content: space-between; /* Espaciado entre columnas */
-            width: 100%;
-            max-width: 800px; /* Ancho mĆ�ximo */
-            gap: 30px; /* Espacio entre columnas */
-        }
-
-        /* Estilo de cada columna */
-        .column {
-            background-color: #444; /* Fondo de columnas */
-            border-radius: 10px;
-            padding: 20px;
-            width: 45%; /* Ancho de cada columna */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        /* TĆ­tulos de las columnas */
-        .column-title {
-            font-size: 1.8rem;
-            color: #ffba08; /* Color amarillo */
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        /* Estilo de los enlaces (botones) */
-        a {
-            display: block;
-            padding: 15px 0; /* Espaciado vertical en el botĆ³n */
-            text-decoration: none;
-            color: #282c34; /* Color de texto de los botones */
-            background-color: #ffba08; /* Botones color amarillo */
-            border-radius: 8px;
-            font-weight: bold;
-            text-align: center;
-            transition: background-color 0.3s, transform 0.3s;
-            margin: 10px 0; /* Margen entre botones */
-        }
-
-        a:hover {
-            background-color: #e89b00; /* Color de fondo al pasar el ratĆ³n */
-            transform: translateY(-2px);
-        }
-    </style>
+    <title>Minecraft Launcher</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 </head>
 <body>
-    <h1>EaglerClients</h1>
-    <!-- Texto de crĆ©dito rotado en la esquina inferior derecha -->
-    <div class="credit">by Cristianboy9</div>
-    <p>Select a client to use:</p>
-
-    <!-- Contenedor de botones en dos columnas -->
-    <div class="button-container">
-        <!-- Columna Izquierda para Legit Clients -->
-        <div class="column">
-            <div class="column-title">Legit Clients</div>
-            <a href="Resent-Signed.html">Resent Signed</a>
-            <a href="Shadow-Client.html">Shadow Client</a>
+    <div class="launcher">
+        <header class="launcher-header">
+            <div class="logo">
+                <svg class="minecraft-logo" viewBox="0 0 711 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M38.9 113.1H0V25.5h33.4v13.8H14.6v19.8h15.4v13.8H14.6v26.4h24.3v13.8z" fill="#DB2824"/>
+                    <path d="M76.5 113.1l-4.2-17.5H58.1l-4.2 17.5H39.2L55.7 25.6h19.1l16.5 87.5H76.5zm-8.7-37.9c-1.4-5.9-3-12.9-4.5-20.1h-.2c-1.5 7.4-3 14.3-4.4 20.1l-1.3 6.6h11.8l-1.4-6.6z" fill="#DB2824"/>
+                    <path d="M149.9 113.1h-13.8L124.6 88c-.9-1.9-1.8-3.2-2.7-3.8-.9-.6-2.2-.9-4-.9h-2.5v29.8H101V25.5h23.5c16.6 0 24.9 6.2 24.9 18.6 0 4.3-1.2 8-3.6 11.1-2.4 3.1-5.7 5.3-9.9 6.4v.2c2 .7 3.7 1.8 5.1 3.2 1.4 1.5 2.7 3.6 4.1 6.3l4.8 41.8zm-34.5-73.8v25.3h3.9c3.9 0 6.8-.8 8.8-2.3 1.9-1.5 2.9-4 2.9-7.5 0-6.5-3.6-9.7-10.9-9.7h-4.7v-5.8z" fill="#DB2824"/>
+                    <path d="M191.6 113.1h-32.8V25.5h14.6v73.8h18.2v13.8z" fill="#DB2824"/>
+                    <path d="M245.5 113.1h-14.6v-36.7l-14.9-50.9h15.5l7.2 30.5c.3 1.4.7 3.4 1.1 6 .4 2.6.7 4.9.8 6.9h.2c.2-1.9.5-4.1.9-6.4.4-2.3.7-4.5 1.1-6.5l7.2-30.5h15.5l-14.9 51v36.6h-5.1z" fill="#DB2824"/>
+                    <path d="M303.2 25.5h14.6v51.8c0 6.1-.7 11.3-2.1 15.6-1.4 4.3-3.5 7.8-6.4 10.5-2.9 2.7-6.5 4.7-10.8 6-4.3 1.3-9.5 2-15.4 2-5.9 0-11-0.7-15.3-2-4.3-1.3-7.9-3.3-10.8-6-2.9-2.7-5-6.2-6.4-10.5-1.4-4.3-2.1-9.5-2.1-15.6V25.5h14.6v51.8c0 6.5 1.1 11.1 3.2 13.7 2.1 2.6 5.3 3.9 9.6 3.9 4.3 0 7.6-1.3 9.7-3.9 2.1-2.6 3.2-7.2 3.2-13.7V25.5z" fill="#DB2824"/>
+                    <path d="M367.9 113.1h-14.6V39.3h-16.2V25.5h47v13.8h-16.2v73.8z" fill="#DB2824"/>
+                    <path d="M432.2 113.1h-14.6V39.3h-16.2V25.5h47v13.8h-16.2v73.8z" fill="#DB2824"/>
+                    <path d="M504.5 113.1h-14.6v-36.7l-14.9-50.9h15.5l7.2 30.5c.3 1.4.7 3.4 1.1 6 .4 2.6.7 4.9.8 6.9h.2c.2-1.9.5-4.1.9-6.4.4-2.3.7-4.5 1.1-6.5l7.2-30.5h15.5l-14.9 51v36.6h-5.1z" fill="#DB2824"/>
+                    <path d="M580.6 113.1h-39V25.5H576v13.8h-19.6v19.8h15.6v13.8h-15.6v26.4h24.2v13.8z" fill="#DB2824"/>
+                    <path d="M626.5 113.1l-4.2-17.5h-14.2l-4.2 17.5h-14.8l16.5-87.5h19.1l16.5 87.5h-14.7zm-8.7-37.9c-1.4-5.9-3-12.9-4.5-20.1h-.2c-1.5 7.4-3 14.3-4.4 20.1l-1.3 6.6h11.8l-1.4-6.6z" fill="#DB2824"/>
+                    <path d="M688.7 39.3h-24.2v20h15.9v13.8h-15.9v40H650V25.5h38.7v13.8z" fill="#DB2824"/>
+                </svg>
+            </div>
+            <div class="header-buttons">
+                <button class="btn btn-small">Settings</button>
+            </div>
+        </header>
+        <div class="launcher-content">
+            <div class="launcher-sidebar">
+                <div class="navigation">
+                    <button class="nav-btn active" data-tab="home">Home</button>
+                    <button class="nav-btn" data-tab="news">News</button>
+                    <button class="nav-btn" data-tab="installations">Installations</button>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="https://images.websim.ai/avatar/user" alt="User Avatar">
+                    </div>
+                    <div class="username">Player</div>
+                </div>
+            </div>
+            <div class="launcher-main">
+                <div class="tab-content active" id="home">
+                    <div class="featured-banner">
+                        <div class="banner-image" style="background-image: url('https://www.minecraft.net/content/dam/games/minecraft/key-art/MC_The-Wild-Update_1170x500.jpg');">
+                            <div class="banner-text">
+                                <h2>The Zyth Launcher v0.0.2</h2>
+                                <p>Now with chat functionality and improved client selection!</p>
+                            </div>
+                        </div>
+                        <div class="banner-nav">
+                            <span class="banner-dot active"></span>
+                            <span class="banner-dot"></span>
+                            <span class="banner-dot"></span>
+                        </div>
+                    </div>
+                    <div class="versions-panel">
+                        <div class="version-select">
+                            <label for="version">Version:</label>
+                            <select id="version">
+                                <option value="release">Latest Release (1.20.4)</option>
+                                <option value="snapshot">Latest Snapshot (23w46a)</option>
+                                <option value="beta">Latest Beta (1.21 Beta)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" id="play-btn">PLAY</button>
+                    </div>
+                    <div class="news-tiles">
+                        <h3>Latest News</h3>
+                        <div class="tiles">
+                            <div class="news-tile">
+                                <div class="tile-image" style="background-image: url('https://www.minecraft.net/content/dam/games/minecraft/screenshots/Deep_dark_sculk_spread.jpg');"></div>
+                                <div class="tile-content">
+                                    <h4>NEW BIOMES COMING SOON</h4>
+                                    <p>Explore the mysteries of the deep dark...</p>
+                                </div>
+                            </div>
+                            <div class="news-tile">
+                                <div class="tile-image" style="background-image: url('https://www.minecraft.net/content/dam/games/minecraft/screenshots/Minecraft_Jungle_Update.jpg');"></div>
+                                <div class="tile-content">
+                                    <h4>JUNGLE UPDATE PREVIEW</h4>
+                                    <p>New jungle mobs and features revealed!</p>
+                                </div>
+                            </div>
+                            <div class="news-tile">
+                                <div class="tile-image" style="background-image: url('https://www.minecraft.net/content/dam/games/minecraft/screenshots/MinecraftSummit2023.jpg');"></div>
+                                <div class="tile-content">
+                                    <h4>MINECON 2023 RECAP</h4>
+                                    <p>Everything announced at our biggest event yet!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="news">
+                    <h2>Launcher Updates</h2>
+                    <div class="news-list">
+                    </div>
+                </div>
+                <div class="tab-content" id="installations">
+                    <div class="installations-header">
+                        <h2>Installations</h2>
+                    </div>
+                    <div class="installations-list">
+                        <div class="installation-item active">
+                            <div class="installation-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                    <path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h16V4H4zm2 2h12v12H6V6zm2 2v8h8V8H8zm2 2h4v4h-4v-4z"/>
+                                </svg>
+                            </div>
+                            <div class="installation-info">
+                                <div class="installation-name">Eaglercraft 1.8.8</div>
+                                <div class="installation-version">Latest</div>
+                            </div>
+                            <div class="installation-actions">
+                                <button class="btn btn-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                        <path d="M12 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="installation-item">
+                            <div class="installation-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                    <path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h16V4H4zm2 2h12v12H6V6zm2 2v8h8V8H8zm2 2h4v4h-4v-4z"/>
+                                </svg>
+                            </div>
+                            <div class="installation-info">
+                                <div class="installation-name">Eaglercraft 1.5.2</div>
+                                <div class="installation-version">Latest</div>
+                            </div>
+                            <div class="installation-actions">
+                                <button class="btn btn-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                        <path d="M12 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="installation-item">
+                            <div class="installation-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                    <path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h16V4H4zm2 2h12v12H6V6zm2 2v8h8V8H8zm2 2h4v4h-4v-4z"/>
+                                </svg>
+                            </div>
+                            <div class="installation-info">
+                                <div class="installation-name">Justin Client</div>
+                                <div class="installation-version">1.8.8</div>
+                            </div>
+                            <div class="installation-actions">
+                                <button class="btn btn-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                        <path d="M12 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="installation-item">
+                            <div class="installation-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                    <path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h16V4H4zm2 2h12v12H6V6zm2 2v8h8V8H8zm2 2h4v4h-4v-4z"/>
+                                </svg>
+                            </div>
+                            <div class="installation-info">
+                                <div class="installation-name">Resent Client</div>
+                                <div class="installation-version">1.8.8</div>
+                            </div>
+                            <div class="installation-actions">
+                                <button class="btn btn-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                        <path d="M12 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="installation-item">
+                            <div class="installation-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                    <path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h16V4H4zm2 2h12v12H6V6zm2 2v8h8V8H8zm2 2h4v4h-4v-4z"/>
+                                </svg>
+                            </div>
+                            <div class="installation-info">
+                                <div class="installation-name">Astra Client</div>
+                                <div class="installation-version">1.8.8</div>
+                            </div>
+                            <div class="installation-actions">
+                                <button class="btn btn-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                        <path d="M12 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="installation-item">
+                            <div class="installation-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                    <path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h16V4H4zm2 2h12v12H6V6zm2 2v8h8V8H8zm2 2h4v4h-4v-4z"/>
+                                </svg>
+                            </div>
+                            <div class="installation-info">
+                                <div class="installation-name">PixelClient</div>
+                                <div class="installation-version">1.8.8</div>
+                            </div>
+                            <div class="installation-actions">
+                                <button class="btn btn-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                        <path d="M12 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Columna Derecha para Hacked Clients -->
-        <div class="column">
-            <div class="column-title">Hacked Clients</div>
-            <a href="UwU-client-b2-offline.html">UwU Client</a>
-            <a href="PremiumDragonv2.html">Premium Dragon v2</a>
-            <a href="PiClient-v1.html">Pi Client v1</a>
+        <footer class="launcher-footer">
+            <div class="footer-links">
+                <a href="https://example.com/privacy" target="_blank">Privacy Policy</a>
+                <a href="https://example.com/terms" target="_blank">Terms of Service</a>
+                <a href="https://example.com/copyright" target="_blank">Copyright</a>
+                <a href="https://example.com/about" target="_blank">About</a>
+                <a href="https://example.com/careers" target="_blank">Careers</a>
+            </div>
+            <div class="copyright">
+                Im_Troller 2025. This is a fan-made launcher demo, not affiliated with Mojang Studios and Microsoft.
+            </div>
+        </footer>
+        <div class="launcher-loading-overlay" id="loading-overlay">
+            <div class="loading-content">
+                <div class="loading-spinner">
+                    <div class="spinner-cube"></div>
+                </div>
+                <div class="loading-text">Loading Minecraft...</div>
+                <div class="loading-progress">
+                    <div class="progress-bar" style="width: 0%;"></div>
+                </div>
+            </div>
         </div>
+        <script src="script.js"></script>
     </div>
-
 </body>
 </html>
