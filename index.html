@@ -18,11 +18,11 @@
         
         <!-- Botones para elegir versiones -->
         <div class="buttons-container">
-            <button class="version-button">Cristianboy9</button>
-            <button class="version-button">PremiumDragonv2</button>
-            <button class="version-button">Resent-Signed</button>
-            <button class="version-button">Shadow-Client</button>
-            <button class="version-button">UwU-client-b2-offline</button>
+            <button class="version-button" onclick="openClient('cristianboy9.html')">Cristianboy9</button>
+            <button class="version-button" onclick="openClient('premiumdragonv2.html')">PremiumDragonv2</button>
+            <button class="version-button" onclick="openClient('resent-signed.html')">Resent-Signed</button>
+            <button class="version-button" onclick="openClient('shadow-client.html')">Shadow-Client</button>
+            <button class="version-button" onclick="openClient('uwu-client.html')">UwU-client-b2-offline</button>
         </div>
 
         <!-- Noticias -->
@@ -41,8 +41,10 @@
         <!-- Sugerencias -->
         <section class="suggestions-section">
             <h2>Envía una sugerencia</h2>
-            <textarea id="suggestion-input" placeholder="Escribe tu sugerencia aquí..."></textarea>
-            <button class="suggestion-button">Enviar sugerencia</button>
+            <form id="suggestion-form">
+                <textarea id="suggestion-input" placeholder="Escribe tu sugerencia aquí..."></textarea>
+                <button type="submit" class="suggestion-button">Enviar sugerencia</button>
+            </form>
         </section>
 
         <!-- Pie de página -->
@@ -50,5 +52,7 @@
             <p>&copy; 2025 Eagler Clients - Todos los derechos reservados.</p>
         </footer>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
