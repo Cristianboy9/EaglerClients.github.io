@@ -16,7 +16,7 @@ document.getElementById('suggestion-form').addEventListener('submit', function(e
     }
 
     // Configura tu Webhook de Discord aquí
-    const webhookUrl = "TU_DISCORD_WEBHOOK_URL"; // Aquí va tu URL de webhook
+    const webhookUrl = "TU_DISCORD_WEBHOOK_URL"; // Reemplaza con tu URL real
 
     const payload = {
         content: `Nueva sugerencia recibida: ${suggestion}`,
