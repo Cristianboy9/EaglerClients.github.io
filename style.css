@@ -178,4 +178,79 @@ body {
 .launcher-footer p {
     font-size: 1.2rem;
     color: #bbb;
+}}
+
+.news-item:hover {
+    background-color: #666;
+}
+
+.news-item h3 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.news-item p {
+    font-size: 1.3rem;
+}
+
+/* Sección de Sugerencias */
+.suggestions-section {
+    background-color: #444;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 20px;
+    width: 80%;
+}
+
+.suggestions-section h2 {
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#suggestion-input {
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #555;
+    color: #fff;
+    resize: none;
+    min-height: 120px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#suggestion-input:focus {
+    background-color: #666;
+    outline: none;
+}
+
+.suggestion-button {
+    padding: 20px;
+    border: none;
+    background-color: #ff5733;
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.suggestion-button:hover {
+    background-color: #ff471a;
+}
+
+/* Pie de página */
+.launcher-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.launcher-footer p {
+    font-size: 1.2rem;
+    color: #bbb;
 }
